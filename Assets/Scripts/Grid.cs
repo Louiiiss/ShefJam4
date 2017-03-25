@@ -11,6 +11,7 @@ public class Grid : MonoBehaviour {
 	public GameObject[,] GridArray = new GameObject[GridX,GridY];
 	private GameObject ThisSlot;
 	public GameObject SelectedObject;
+	public bool isRoom = false;
 	public bool isSelected = false;
 
 	public int CurrentObjSizeX = 0;

@@ -7,7 +7,9 @@ public class UIItem : MonoBehaviour, IPointerClickHandler {
 
 	public int XSlots;
 	public int YSlots;
+	public bool isRoom;
 	GameObject Grid;
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,7 @@ public class UIItem : MonoBehaviour, IPointerClickHandler {
 		Grid.GetComponent<Grid> ().CurrentObjSizeY = YSlots;
 		Grid.GetComponent<Grid> ().SelectedObject = this.gameObject;
 		Grid.GetComponent<Grid> ().isSelected = true;
+		Grid.GetComponent<Grid> ().isRoom = isRoom;
 	}
 
 
