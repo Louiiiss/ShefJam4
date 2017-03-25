@@ -10,6 +10,8 @@ public class Grid : MonoBehaviour {
 	static int GridY = 50;
 	public GameObject[,] GridArray = new GameObject[GridX,GridY];
 	private GameObject ThisSlot;
+	public GameObject SelectedObject;
+	public bool isSelected = false;
 
 	public int CurrentObjSizeX = 0;
 	public int CurrentObjSizeY = 0;
@@ -34,6 +36,15 @@ public class Grid : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (Input.GetMouseButtonDown(1)){
+			print ("Click");
+			ClearObject();
+		}
+	}
+
+	void ClearObject(){
+		CurrentObjSizeX = 0;
+		CurrentObjSizeY = 0;
+		this.GetComponentInChildren<GridScript> ().HighlightGrid ();
 	}
 }

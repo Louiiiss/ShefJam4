@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class GridScript : MonoBehaviour, IPointerEnterHandler {
+public class GridScript : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler {
 
 	public Material NotHigh;
 	public Material Highlighted;
@@ -14,6 +14,8 @@ public class GridScript : MonoBehaviour, IPointerEnterHandler {
 	public int IndexY = 0;
 	int x;
 	int y;
+
+
 	// Use this for initialization
 	void Start () {
 		Grid = this.transform.parent.gameObject;
@@ -26,6 +28,10 @@ public class GridScript : MonoBehaviour, IPointerEnterHandler {
 	}
 
 	public void OnPointerEnter(PointerEventData data){
+		HighlightGrid ();
+	}
+
+	public void HighlightGrid(){
 		for (int i = 0; i < GridArray.GetLength (0); i++) {
 			for (int j = 0; j < GridArray.GetLength (1); j++) {
 				GridArray [i,j].GetComponent<Image> ().material = NotHigh;
@@ -37,6 +43,12 @@ public class GridScript : MonoBehaviour, IPointerEnterHandler {
 			for (int j = 0; j < y; j++) {
 				GridArray [IndexX + i, IndexY + j].GetComponent<Image>().material = Highlighted;
 			}
+		}
+	}
+
+	public void OnPointerClick(PointerEventData data){
+		if (Grid.GetComponent<Grid> ().isSelected) {
+			
 		}
 	}
 
