@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIItem : MonoBehaviour, IDragHandler, IDropHandler {
+public class UIItem : MonoBehaviour, IPointerClickHandler {
 
 	public int XSlots;
 	public int YSlots;
@@ -19,13 +19,12 @@ public class UIItem : MonoBehaviour, IDragHandler, IDropHandler {
 		
 	}
 
-	public void OnDrag(PointerEventData data){
+	public void OnPointerClick(PointerEventData data){
 		Grid.GetComponent<Grid> ().CurrentObjSizeX = XSlots;
 		Grid.GetComponent<Grid> ().CurrentObjSizeY = YSlots;
+		Grid.GetComponent<Grid> ().SelectedObject = this.gameObject;
+		Grid.GetComponent<Grid> ().isSelected = true;
 	}
 
-	public void OnDrop(PointerEventData data){
-		print ("Dropped");
-	}
 
 }
