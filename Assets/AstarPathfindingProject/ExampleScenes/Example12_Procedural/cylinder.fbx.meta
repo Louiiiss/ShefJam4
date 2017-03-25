@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 12fa48cf916e52e43999353cc03e8a3f
 timeCreated: 1490475710
 licenseType: Free
+=======
+guid: 436b69414b04047fca3929c70df57c4f
+>>>>>>> master
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -13,7 +17,11 @@ ModelImporter:
     7400000: Default Take
     9500000: //RootNode
   materials:
+<<<<<<< HEAD
     importMaterials: 1
+=======
+    importMaterials: 0
+>>>>>>> master
     materialName: 0
     materialSearch: 1
   animations:
@@ -50,11 +58,19 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+<<<<<<< HEAD
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
+=======
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 4
+>>>>>>> master
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -72,7 +88,11 @@ ModelImporter:
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
+<<<<<<< HEAD
     skeletonHasParents: 1
+=======
+    skeletonHasParents: 0
+>>>>>>> master
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
   humanoidOversampling: 1
