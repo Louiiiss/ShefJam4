@@ -14,6 +14,7 @@ public class GridScript : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
 	public int IndexY = 0;
 	int x;
 	int y;
+	bool HasObject = false;
 
 
 	// Use this for initialization
@@ -47,9 +48,30 @@ public class GridScript : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
 	}
 
 	public void OnPointerClick(PointerEventData data){
-		if (Grid.GetComponent<Grid> ().isSelected) {
-			
+		if (Grid.GetComponent<Grid> ().isSelected && DoesFit()) {
+			GameObject PlacedObject = Instantiate (Grid.GetComponent<Grid> ().SelectedObject, this.transform.position, new Quaternion (0, 0, 0, 0));
+			PlacedObject.transform.SetParent (this.transform);
+			PlacedObject.transform.position = (GridArray [IndexX, IndexY].transform.position + GridArray [IndexX + x-1, IndexY + y-1].transform.position)/2;
+			PlacedObject.transform.localScale = new Vector3 (x/50f, y/50f, 1);
+			PlacedObject.GetComponent<UIItem> ().enabled = false;
+			Grid.GetComponent<Grid> ().ClearObject ();
+			for (int i = 0; i < x; i++) {
+				for (int j = 0; j < y; j++) {
+					GridArray [IndexX + i, IndexY + j].GetComponent<GridScript> ().HasObject = true;
+				}
+			}
 		}
+	}
+
+	bool DoesFit(){
+		for (int i = 0; i < x; i++) {
+			for (int j = 0; j < y; j++) {
+				if (GridArray [IndexX + i, IndexY + j].GetComponent<GridScript> ().HasObject == true) {
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 

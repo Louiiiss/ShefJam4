@@ -42,9 +42,10 @@ public class Grid : MonoBehaviour {
 		}
 	}
 
-	void ClearObject(){
+	public void ClearObject(){
 		CurrentObjSizeX = 0;
 		CurrentObjSizeY = 0;
 		this.GetComponentInChildren<GridScript> ().HighlightGrid ();
+		isSelected = false;
 	}
 }

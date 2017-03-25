@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 0b5ec8dde2872ac4d93dda8f86b83a10
+timeCreated: 1490475699
+licenseType: Free
+=======
 guid: 78396926cbbfc4ac3b48fc5fc34a87d1
 labels:
 - Pathfinder
+>>>>>>> master
 MonoImporter:
   serializedVersion: 2
   defaultReferences: []
