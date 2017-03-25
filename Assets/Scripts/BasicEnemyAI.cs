@@ -73,15 +73,22 @@ public class BasicEnemyAI : MonoBehaviour {
 	}
 
 
-	void FixedUpdate(){
 
-		Debug.Log("so this is doing something");
-
+	void Update(){
 		if(attacking){
 			attackLength();
 		}
 
 		reduceAttackCooldown();
+	}
+
+
+
+
+	void FixedUpdate(){
+
+		Debug.Log("so this is doing something");
+
 
 		if (target == null){
 			Debug.LogError("No player found");
