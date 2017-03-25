@@ -15,8 +15,8 @@ public class BasicEnemyAI : MonoBehaviour {
 	public float attackRange;
 	private bool attacking = false;
 	public float attackForce;
-	public float attackDuration = 1f;
-	public float attackCooldown = 2f;
+	public float attackDuration;
+	public float attackCooldown;
 	public bool canAttack = true;
 
 	private Seeker seeker;
@@ -65,7 +65,7 @@ public class BasicEnemyAI : MonoBehaviour {
 
 
 	public void OnPathComplete(Path p){
-		Debug.Log("We've got a path. Did it have an error?" + p.error);
+		//Debug.Log("We've got a path. Did it have an error?" + p.error);
 		if (!p.error){
 			path = p;
 			currentWaypoint = 0;
@@ -78,8 +78,10 @@ public class BasicEnemyAI : MonoBehaviour {
 		if(attacking){
 			attackLength();
 		}
+		else{
+			reduceAttackCooldown();
+		}
 
-		reduceAttackCooldown();
 	}
 
 
@@ -87,11 +89,11 @@ public class BasicEnemyAI : MonoBehaviour {
 
 	void FixedUpdate(){
 
-		Debug.Log("so this is doing something");
+		//Debug.Log("so this is doing something");
 
 
 		if (target == null){
-			Debug.LogError("No player found");
+			//Debug.LogError("No player found");
 			return;
 		}
 
@@ -126,10 +128,10 @@ public class BasicEnemyAI : MonoBehaviour {
 
 
 				dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-				Debug.Log(dir);
+				//Debug.Log(dir);
 
 
-				Debug.Log("Heading     " + dir); 
+				//Debug.Log("Heading     " + dir); 
 
 				dir = dir*speed*Time.fixedDeltaTime;
 
@@ -146,7 +148,7 @@ public class BasicEnemyAI : MonoBehaviour {
 
 			float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
 
-			Debug.Log("Vector3 Distance between this point and waypoint      " + dist);
+			//Debug.Log("Vector3 Distance between this point and waypoint      " + dist);
 
 			if(dist < nextWaypointDistance){
 				currentWaypoint ++;
@@ -189,6 +191,7 @@ public class BasicEnemyAI : MonoBehaviour {
 		direction = direction*attackForce*Time.deltaTime;
 
 		rb.velocity = direction;
+		canAttack = false;
 	}
 
 	public void attackLength(){
@@ -196,7 +199,7 @@ public class BasicEnemyAI : MonoBehaviour {
 		if(attackDuration<=0){
 			rb.velocity = Vector3.zero;
 			attacking = false;
-			canAttack = false;
+			attackCooldown = 2f;
 		}
 	}
 
@@ -204,7 +207,6 @@ public class BasicEnemyAI : MonoBehaviour {
 		attackCooldown -= Time.deltaTime;
 		if (attackCooldown<=0){
 			canAttack = true;
-			attackCooldown = 2f;
 		}
 	}
 
