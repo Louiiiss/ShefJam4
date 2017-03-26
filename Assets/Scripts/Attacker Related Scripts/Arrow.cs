@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireArc : MonoBehaviour {
+public class Arrow : MonoBehaviour {
 
-//	private BossAI boss;
-	private float bossArcDam;
+	private float damage;
+
 	// Use this for initialization
 	void Start () {
-	//	boss = GameObject.Find("Enemy Level 1 Boss").GetComponent<BossAI>();
-		bossArcDam = 5 + Random.Range(2,15);
-	//	Debug.Log (boss.getArcDamage());
+		damage = 5 + Random.Range(2,15);
 	}
 
 	// Update is called once per frame
@@ -20,13 +18,14 @@ public class FireArc : MonoBehaviour {
 	}
 
 
+
 	void OnTriggerEnter2D(Collider2D col){
 		if (col.isTrigger != true && col.CompareTag("player")){
-			col.SendMessageUpwards("DealDamage", bossArcDam);
-			Debug.Log (bossArcDam);
+			col.SendMessageUpwards("DealDamage", damage);
+			Debug.Log (damage);
 			Destroy (gameObject);
 		}
 	}
 
-
 }
+

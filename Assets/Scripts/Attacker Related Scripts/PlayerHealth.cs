@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
 	public float maxHealth = 100;
@@ -38,6 +39,7 @@ public class PlayerHealth : MonoBehaviour {
 		}
 		if (currentHealth < 1) {
 			currentHealth = 1;
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 2);
 		}
 
 		healthBarLength = baseBarLength * (currentHealth / (float)maxHealth);

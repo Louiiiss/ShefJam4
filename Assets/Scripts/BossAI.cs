@@ -6,15 +6,15 @@ using UnityEngine;
 public class BossAI : MonoBehaviour {
 	public Transform target;
 	public bool playerRange;
-	public int moveSpeed;
+	private float moveSpeed = 0.75f;
 
 	public float attackRange;
 	private bool attacking = false;
 	public float attackForce;
-	public float arcDamage = 5;
-	public float attackSpeed;
+	private float arcDamage = 5f;
+	private float attackSpeed = 2f;
 	public float attackDuration = 1f;
-	public float attackCooldown = 2f;
+	public float attackCooldown = 2.5f;
 	public bool canAttack = true;
 	public float fireCooldown;
 	public float fireDelay = 0.1f;
@@ -48,10 +48,6 @@ public class BossAI : MonoBehaviour {
 		var offset  = this.transform.position - target.position;
 		Debug.Log (offset.sqrMagnitude + " Offset magnitude");
 		Debug.Log (desiredDistance);
-		if (offset.sqrMagnitude < 3.0f) {
-			this.transform.position = this.transform.position + offset.normalized * (desiredDistance - offset.magnitude);
-
-		}
 
 		if(!attacking) {
 			
@@ -102,8 +98,8 @@ public class BossAI : MonoBehaviour {
 		aiming = false;
 		GameObject projectile = Instantiate(firearc,myTransform.position + projectileDir, Quaternion.Euler(0, 0,(Mathf.Atan2(playerPos.y,playerPos.x)*Mathf.Rad2Deg))) as GameObject;
 
-		projectile.GetComponent<Rigidbody2D>().velocity = projectileDir * attackSpeed;
-		fireCooldown = 3f;
+		projectile.GetComponent<Rigidbody2D>().velocity = projectileDir * (attackSpeed);
+		fireCooldown = 2.5f;
 		fireDelay = 3.0f;
 		attacking = false;
 	}

@@ -19,7 +19,7 @@ public class BossHealth : MonoBehaviour {
 		AdjustCurrentHealth(0);
 		Debug.Log (currentHealth);
 		if (currentHealth == 0.0f) {
-			SceneManager.LoadScene (0);
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex + 1);
 		}
 	}
 	// Method to deal damage to this entity. Called from contact with player weapon.
