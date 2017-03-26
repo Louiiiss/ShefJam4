@@ -44,7 +44,7 @@ public class GridScript : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
 		y = Grid.GetComponent<Grid> ().CurrentObjSizeY;
 		for (int i = 0; i < x; i++) {
 			for (int j = 0; j < y; j++) {
-				if (IndexX + i >= 50 || IndexY + j >= 50) {
+				if (IndexX + i >= GridArray.GetLength (0) || IndexY + j >= GridArray.GetLength (1)) {
 					break;
 				}
 				if (DoesFit ()) {
@@ -68,7 +68,7 @@ public class GridScript : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
 			}
 			PlacedObject.transform.localScale = new Vector3 (x/50f, y/50f, 1);
 			PlacedObject.GetComponent<UIItem> ().enabled = false;
-			Grid.GetComponent<Grid> ().ClearObject ();
+
 			for (int i = 0; i < x; i++) {
 				for (int j = 0; j < y; j++) {
 					if (Grid.GetComponent<Grid> ().isRoom) {
@@ -78,11 +78,12 @@ public class GridScript : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
 					}
 				}
 			}
+			Grid.GetComponent<Grid> ().ClearObject ();
 		}
 	}
 
 	bool DoesFit(){
-		if (IndexX + x > 50 || IndexY + y > 50) {
+		if (IndexX + x > GridArray.GetLength (0)|| IndexY + y > GridArray.GetLength (1)) {
 			return false;
 		}
 		for (int i = 0; i < x; i++) {
