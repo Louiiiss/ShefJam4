@@ -1,5 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 9f298e110a4a10544ac0786bbe6a8938
+timeCreated: 1490475695
+licenseType: Free
+=======
 guid: fe33c6edd001f4cc2a772cb71aff86be
+>>>>>>> master
 PluginImporter:
   serializedVersion: 1
   iconMap: {}
@@ -9,6 +15,13 @@ PluginImporter:
   platformData:
     Any:
       enabled: 1
+<<<<<<< HEAD
+      settings: {}
+    Editor:
+      enabled: 0
+      settings:
+        DefaultValueInitialized: true
+=======
       settings:
         Exclude Editor: 0
         Exclude Linux: 0
@@ -58,14 +71,18 @@ PluginImporter:
       enabled: 1
       settings:
         CPU: AnyCPU
+>>>>>>> master
     WindowsStoreApps:
       enabled: 0
       settings:
         CPU: AnyCPU
+<<<<<<< HEAD
+=======
         DontProcess: False
         PlaceholderPath: 
         SDK: AnySDK
         ScriptingBackend: AnyScriptingBackend
+>>>>>>> master
   userData: 
   assetBundleName: 
   assetBundleVariant: 
