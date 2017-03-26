@@ -24,6 +24,7 @@ public class RangedEnemyController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		thisTransform = transform;
+		playerTransform = GameObject.FindGameObjectWithTag ("player").transform;
 
 		projectileDist = new Vector3(0.1f,0,0);
 	}

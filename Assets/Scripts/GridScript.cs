@@ -30,6 +30,10 @@ public class GridScript : MonoBehaviour, IPointerEnterHandler, IPointerClickHand
 		
 	}
 
+	public bool getHasRoom(){
+		return HasRoom;
+	}
+
 	public void OnPointerEnter(PointerEventData data){
 		HighlightGrid ();
 	}

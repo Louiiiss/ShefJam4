@@ -53,6 +53,9 @@ public class TurnController : MonoBehaviour {
 			for (int j = 0; j < GridArray.GetLength (1); j++) {
 				GridArray [i,j].GetComponent<Image>().enabled = false;
 				GridArray [i,j].GetComponent<GridScript>().enabled = false;
+				if (!GridArray [i, j].GetComponent<GridScript> ().getHasRoom()) {
+					GridArray [i, j].GetComponent<BoxCollider2D> ().enabled = true;
+				}
 			}
 		}
 		GameObject Player = Instantiate (AttackerPlayer, GameObject.FindGameObjectWithTag ("StartRoom").transform.position, new Quaternion ());
@@ -61,5 +64,11 @@ public class TurnController : MonoBehaviour {
 		Player.transform.position = tempPos;
 		tempPos.z = AttackerCamera.transform.position.z;
 		AttackerCamera.transform.position = tempPos;
+		AttackerCamera.GetComponent<CameraAttackFollower> ().Player = Player;
+		GameObject[] Spawners = GameObject.FindGameObjectsWithTag ("Spawner");
+
+		for(int i=0; i<Spawners.Length; i++){
+			Spawners[i].GetComponent<MinionSpawner>().Spawn();
+		}
 	}
 }

@@ -8,7 +8,7 @@ public class AttackHandler : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.Find("AttackerPlayer").GetComponent<AttackerPlayerController>();
+		player = this.transform.parent.gameObject.GetComponent<AttackerPlayerController>();
 		damage = player.getWeaponDamage();
 	}
 	
