@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DefenderCameraMove : MonoBehaviour {
 
-	private float speed = 5f;
+	private float speed = 10f;
 
 	// Use this for initialization
 	void Start () {

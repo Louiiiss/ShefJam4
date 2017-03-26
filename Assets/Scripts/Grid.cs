@@ -6,7 +6,7 @@ using UnityEngine;
 public class Grid : MonoBehaviour {
 
 	public GameObject GridSlot;
-	static int GridX = 50;
+	static int GridX = 100;
 	static int GridY = 50;
 	public GameObject[,] GridArray = new GameObject[GridX,GridY];
 	private GameObject ThisSlot;
@@ -48,5 +48,6 @@ public class Grid : MonoBehaviour {
 		CurrentObjSizeY = 0;
 		this.GetComponentInChildren<GridScript> ().HighlightGrid ();
 		isSelected = false;
+		isRoom = false;
 	}
 }
