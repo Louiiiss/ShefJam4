@@ -25,6 +25,10 @@ public class AttackHandler : MonoBehaviour {
 			col.SendMessageUpwards("DealDamage", damage);
 			col.SendMessageUpwards("Knockback", player.transform);
 		}
+		if (col.isTrigger != true && col.CompareTag("Boss")){
+			col.SendMessageUpwards("DealDamage", damage/2);
+			col.SendMessageUpwards("Knockback", player.transform);
+		}
 
 
 

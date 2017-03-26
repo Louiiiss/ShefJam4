@@ -8,13 +8,10 @@ public class BossAttackRange : MonoBehaviour {
 	//private CircleCollider2D visionRange;
 	private bool playerInRange = false;
 	private Vector3 playerLocation;
-	private BossAI aiController;
 	// Test damage variable
-	private float damage = 33;
 
 	// Use this for initialization
 	void Start () {
-		aiController = this.GetComponentInParent<BossAI>();
 
 	}
 
