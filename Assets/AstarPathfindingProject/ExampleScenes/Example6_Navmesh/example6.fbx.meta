@@ -1,11 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 16fe655e480d46a48b51f66f7e97e0af
-timeCreated: 1490475711
-licenseType: Free
-=======
 guid: 7fdfb9a3e0fdf4df880ebc7fa5f56398
->>>>>>> master
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
@@ -13,7 +7,6 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-<<<<<<< HEAD
     4300000: Plane
     7400000: Default Take
     9500000: //RootNode
@@ -23,19 +16,6 @@ ModelImporter:
     materialSearch: 1
   animations:
     legacyGenerateAnimations: 4
-=======
-    4300000: Plane_001
-    4300002: Plane
-    6400000: //RootNode
-    7400004: Default Take
-    11100000: //RootNode
-  materials:
-    importMaterials: 0
-    materialName: 3
-    materialSearch: 1
-  animations:
-    legacyGenerateAnimations: 3
->>>>>>> master
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
@@ -54,21 +34,12 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-<<<<<<< HEAD
-    globalScale: 1
+    globalScale: 0
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
-=======
-    globalScale: 2
-    meshCompression: 0
-    addColliders: 1
-    importBlendShapes: 1
-    swapUVChannels: 0
     generateSecondaryUV: 1
->>>>>>> master
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -77,19 +48,11 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-<<<<<<< HEAD
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-=======
-    useFileScale: 0
-  tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 1
-    tangentImportMode: 4
->>>>>>> master
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -109,11 +72,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-<<<<<<< HEAD
   animationType: 2
-=======
-  animationType: 1
->>>>>>> master
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
